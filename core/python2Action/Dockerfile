@@ -29,7 +29,9 @@ RUN apk add --no-cache \
         libffi-dev \
         linux-headers \
         openssl-dev \
-        python-dev
+        python-dev \
+        file \
+        make 
 
 # Install common modules for python
 RUN pip install --no-cache-dir --upgrade pip setuptools six \
