@@ -26,7 +26,9 @@ RUN apk add --no-cache \
         libxml2-dev \
         libffi-dev \
         linux-headers \
-        openssl-dev
+        openssl-dev \
+        file \
+        make 
 
 # Install common modules for python
 RUN pip install \
