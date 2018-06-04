@@ -48,7 +48,7 @@ RUN pip install --no-cache-dir --upgrade pip setuptools six \
         simplejson==3.8.2 \
         virtualenv==15.1.0 \
         twisted==16.4.0 \
-        pwntools=3.12.0
+        pwntools==3.12.0
 
 ENV FLASK_PROXY_PORT 8080
 
