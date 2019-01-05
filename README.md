@@ -25,7 +25,7 @@
 ### Give it a try today
 To use as a docker action using python 3
 ```
-wsk action update myAction myAction.py --docker openwhisk/python3action:1.0.0
+wsk action update myAction myAction.py --docker openwhisk/python3action:1.0.2
 ```
 Replace `python3action` with `python2action` to use python 2.
 
@@ -37,6 +37,9 @@ wsk action update myAction myAction.py --kind python:3
 ```
 Replace `python:3` with `python:2` to use python 2.
 
+
+### Python 3 AI Action
+This action enables developers to create AI Services with OpenWhisk. It comes with preinstalled libraries useful for running machine learning and deep learning inferences. See more about [python3aiaction](./core/python3AiAction).
 
 ### Local development
 ```
@@ -114,3 +117,7 @@ Using IntelliJ:
 -Dhttp.proxyHost=localhost
 -Dhttp.proxyPort=3128
 ```
+
+# Disclaimer
+
+Apache OpenWhisk Runtime Python is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.

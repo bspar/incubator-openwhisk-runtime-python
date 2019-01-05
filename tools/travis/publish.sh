@@ -34,6 +34,8 @@ if [ ${RUNTIME_VERSION} == "2" ]; then
   RUNTIME="python2Action"
 elif [ ${RUNTIME_VERSION} == "3" ]; then
   RUNTIME="pythonAction"
+elif [ ${RUNTIME_VERSION} == "3-ai" ]; then
+  RUNTIME="python3AiAction"
 fi
 
 if [[ ! -z ${DOCKER_USER} ]] && [[ ! -z ${DOCKER_PASSWORD} ]]; then
@@ -46,4 +48,15 @@ TERM=dumb ./gradlew \
 -PdockerRegistry=docker.io \
 -PdockerImagePrefix=${IMAGE_PREFIX} \
 -PdockerImageTag=${IMAGE_TAG}
+
+  # if doing latest also push a tag with the hash commit
+  if [ ${IMAGE_TAG} == "latest" ]; then
+  SHORT_COMMIT=`git rev-parse --short HEAD`
+  TERM=dumb ./gradlew \
+  :core:${RUNTIME}:distDocker \
+  -PdockerRegistry=docker.io \
+  -PdockerImagePrefix=${IMAGE_PREFIX} \
+  -PdockerImageTag=${SHORT_COMMIT}
+  fi
+
 fi
